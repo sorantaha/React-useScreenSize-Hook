@@ -15,11 +15,10 @@ const initialScreenSize = (innerWidth) => {
     } else {
       initialBreakpoint =
         screens_breakpoints.breakpoints[
-          screens_breakpoints.breakpoints.length - 1
+        screens_breakpoints.breakpoints.length - 1
         ];
     }
   }
-
   return initialBreakpoint;
 };
 
@@ -27,9 +26,8 @@ const getBreakpoint = (screen) => {
   let breakpoint = 0;
 
   for (let i = 0; i < screens_breakpoints.screens.length; i++) {
-    screen == screens_breakpoints.screens[i]
-      ? (breakpoint = screens_breakpoints.breakpoints[i])
-      : '';
+    if (screen === screens_breakpoints.screens[i])
+      breakpoint = screens_breakpoints.breakpoints[i]
   }
 
   return breakpoint;
@@ -39,9 +37,8 @@ const getScreen = (breakpoint) => {
   let screen = '';
 
   for (let i = 0; i < screens_breakpoints.breakpoints.length; i++) {
-    breakpoint == screens_breakpoints.breakpoints[i]
-      ? (screen = screens_breakpoints.screens[i])
-      : '';
+    if (breakpoint === screens_breakpoints.breakpoints[i])
+      screen = screens_breakpoints.screens[i]
   }
 
   return screen;
@@ -67,5 +64,5 @@ export default function useScreenSize() {
     };
   }, [breakpoint]);
 
-  return { breakpoint, getScreen, getBreakpoint };
+  return { breakpoint, screen:getScreen(breakpoint), getScreen, getBreakpoint };
 }
