@@ -1,5 +1,6 @@
 # React-useScreenSize-Hook
 this hook useful when component needed to render by changing the screen breakpoints
-
-* its a start up, soon there will be more simplification*
-* any change is alowed to simplify, adding more feature or improve this hook more *
+contains two states (  breakpoint, screen ) and two helper functions (  getScreen, getBreakpoint )
+* import useScreenSize from './use_screen_size.js' *
+* const { breakpoint, screen, getScreen, getBreakpoint } = useScreenSize(); *
+* console.log(breakpoint, screen, getScreen(1280), getBreakpoint("lg")); *
