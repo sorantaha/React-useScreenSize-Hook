@@ -64,5 +64,5 @@ export default function useScreenSize() {
     };
   }, [breakpoint]);
 
-  return { breakpoint, screen:getScreen(breakpoint), getScreen, getBreakpoint };
+  return [ breakpoint, getScreen(breakpoint), getScreen, getBreakpoint ];
 }
